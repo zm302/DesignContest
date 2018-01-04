@@ -1,0 +1,36 @@
+*{
+    margin: o auto;
+    padding: 0;
+}   
+body{
+    
+}
+#content1
+{
+    width: 800px;
+    margin-top: 80px;
+    margin-left: 280px;
+    float: left;
+}
+#content1 img{
+    width: 380px;
+    height: 230px;
+    border-radius: 2%;
+    clear: both;
+}
+#switch1
+{
+    font-size: 1.2em;
+    color: #ffffff;
+
+    background:#667799;
+    width:131px;
+    height: 30px;
+    -moz-border-radius: 4px 4px 4px 4px;
+   	-webkit-border-radius: 4px 4px 4px 4px;
+   	border-radius:4px 4px 4px 4px;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 40px;
+    clear: both;
+}

@@ -1,0 +1,39 @@
+﻿<Window x:Class="DesignContest.WinApp.MainMonitoring"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:wfi ="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        xmlns:wf ="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesignContest.WinApp"
+        mc:Ignorable="d"
+        Title="MianMonitoring" Height="500" Width="1000" WindowStartupLocation="CenterScreen" WindowStyle="None" WindowState="Maximized" Icon="Resources/SLMS.png" Loaded="Window_Loaded">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="98"/>
+                <RowDefinition/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.ColumnSpan="3">
+                <Grid.Background>
+                    <ImageBrush ImageSource="Resources/MainMonitoringtitle.png"/>
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="27*"/>
+                    <RowDefinition Height="71*"/>
+                </Grid.RowDefinitions>
+                <Image Name="imgBack" Source="Resources/back.png" Width="32" HorizontalAlignment="Right" Margin="20,0" MouseLeftButtonDown="imgBack_MouseLeftButtonDown"/>
+            </Grid>
+            <Grid Grid.Row="1" Background="Black" Margin="10,20">
+                <WindowsFormsHost>
+                    <wf:PictureBox x:Name="picturebox_IpCamera" BackColor="Black"></wf:PictureBox>
+                </WindowsFormsHost>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Button Name="btnQuit" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" FontSize="20" Margin="20" Click="btnQuit_Click">退出</Button>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</Window>

@@ -1,0 +1,160 @@
+﻿<Window x:Class="DesignContest.WinApp.LaboratoryEnvironment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wfi ="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        xmlns:wf ="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:local="clr-namespace:DesignContest.WinApp"
+        xmlns:CHR="clr-namespace:System.Windows.Forms.DataVisualization.Charting;assembly=System.Windows.Forms.DataVisualization"
+        mc:Ignorable="d"
+        Title="LaboratoryEnvironment" Height="900" Width="1200" WindowStartupLocation="CenterScreen" WindowStyle="None" WindowState="Maximized" Icon="Resources/SLMS.png" Loaded="Window_Loaded">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="98"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.Background>
+                    <ImageBrush ImageSource="Resources/LaboratoryEnvir.png"/>
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="27*"/>
+                    <RowDefinition Height="71*"/>
+                </Grid.RowDefinitions>
+                <Image Name="imgBack" Source="Resources/back.png" Width="32" HorizontalAlignment="Right" Margin="20,0" MouseLeftButtonDown="imgBack_MouseLeftButtonDown"/>
+            </Grid>
+            <Grid Grid.Row="1" Margin="10,20">
+                <Grid.Background>
+                    <ImageBrush ImageSource="Resources/bg_frame_gray.png"/>
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="17"/>
+                    <RowDefinition Height="283.8"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <GroupBox Header="实验室监控" FontSize="20" Width="400" Height="300" Margin="10,0,10,0" Grid.RowSpan="2">
+                    <Border Margin="20" BorderBrush="White" BorderThickness="1">
+                        <WindowsFormsHost x:Name="windowsFormHost">
+                            <wf:PictureBox x:Name="Picture_monitor" Dock="Fill" BackColor="Black"/>
+                        </WindowsFormsHost>
+                    </Border>
+
+                </GroupBox>
+                <GroupBox Grid.Row="2" Header="实验室信息" FontSize="20" Width="420">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" VerticalAlignment="Top">****</TextBlock>
+                        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top">实验室名称：</TextBlock>
+                        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top">实验室类别：</TextBlock>
+                        <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top" >实验室功能：</TextBlock>
+                        <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top">实验室地址：</TextBlock>
+                        <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top">实验室描述：</TextBlock>
+                        <TextBlock Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top">实验室注意事项：</TextBlock>
+                        <TextBlock Grid.Row="7" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Top">其他注意事项：</TextBlock>
+                        
+                        <TextBlock Name="txtClassroomName" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Height="24" Margin="5,5,20,5" TextWrapping="Wrap"/>
+                        <TextBlock Name="cmBoxClassroomType" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Height="24" Margin="5,5,20,5" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Name="txtClassFunction" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Height="24" Margin="5,5,20,5" TextWrapping="Wrap"/>
+                        <TextBlock Name="txtClassroomLocation" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Height="24" Margin="5,5,20,5" TextWrapping="Wrap"/>
+                        <TextBlock Name="txtClassDescription" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Height="24" Margin="5,5,20,5" TextWrapping="Wrap"/>
+                        <TextBlock Name="txtClassroomRemark" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" Margin="5,5,20,5" TextWrapping="Wrap"/>
+                        <TextBlock Name="txtRemark" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" Margin="5,5,20,5" TextWrapping="Wrap"/>
+                        
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="实验室温湿度检测" FontSize="20" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Margin="20,0,19.6,408" Grid.RowSpan="3">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" x:Name="chartGrid">
+
+                        </Grid>
+                        <Grid Grid.Column="1" Margin="10,0">
+                            <StackPanel>
+                                <TextBlock Foreground="Black">实时监控：</TextBlock>
+                                <Image Name="imgWarningLamp" Source="Resources/warningLampOff.png" HorizontalAlignment="Left" Margin="10" Width="50" Grid.Row="0" Grid.Column="0"></Image>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock>当前温度：</TextBlock>
+                                    <TextBlock Name="txtTemperature">15℃</TextBlock>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,10">
+                                    <TextBlock>当前湿度：</TextBlock>
+                                    <TextBlock Name="txtHumidity">45%</TextBlock>
+                                </StackPanel>
+                                <TextBlock>室内适宜指数：</TextBlock>
+                                <TextBlock HorizontalAlignment="Left" Margin="10" TextWrapping="Wrap">
+                                建议打开暖气，调试温度。
+                                </TextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="火灾预警管理" FontSize="20" Grid.Row="2" Grid.Column="1" Margin="20,10,26,0">
+                    <Grid Margin="20,30">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">烟雾：</TextBlock>
+                        <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">火焰：</TextBlock>
+                        <TextBlock Name="lblSmoke" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">N/A</TextBlock>
+                        <TextBlock Name="lblFire" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">N/A</TextBlock>
+                        <Image Name="imgWraningLamp" Source="Resources/warningLampOff.png" Height="50" Grid.Row="0" Grid.Column="0"/>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="室内照明灯管理" FontSize="20" Grid.Row="2" Grid.Column="2" Margin="20,10,20,0">
+                    <Grid Margin="20,30">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="137.6"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Name="imgRoomLamp0" Source="Resources/lamp_off.png" Margin="20,0" Height="65"/>
+                        <Image Name="imgRoomLamp1" Source="Resources/lamp_off.png" Margin="20,0" Height="65" Grid.Row="0" Grid.Column="1"/>
+                        <Image Name="imgRoomLamp2" Source="Resources/lamp_off.png" Margin="20,0" Height="65" Grid.Row="1" Grid.Column="0"/>
+                        <Image Name="imgRoomLamp3" Source="Resources/lamp_off.png" Margin="20,0" Height="65" Grid.Row="1" Grid.Column="1"/>
+                        <Image Name="imgRoomLamp4" Source="Resources/lamp_off.png" Margin="20,0" Height="65" Grid.Row="2" Grid.Column="0"/>
+                        <Image Name="imgSwitch" Source="Resources/lampswitchOff.png" Width="100" Grid.Row="2" Grid.Column="1" MouseLeftButtonDown="imgSwitch_MouseLeftButtonDown"/>
+                    </Grid>
+                </GroupBox>
+                <Grid Grid.Row="3" Grid.Column="2">
+                    <Button Name="btnQuit" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" FontSize="20" Click="btnQuit_Click">退出</Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

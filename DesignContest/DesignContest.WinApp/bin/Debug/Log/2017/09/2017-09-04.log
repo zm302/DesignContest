@@ -1,0 +1,24 @@
+
+记录时间：2017-09-04 15:46:31,047 
+线程ID: [8] 
+级别：INFO  
+记录器：DesignContest.WinApp.App 
+所在方法：OnStartup 
+描述：日志配置成功。
+
+
+记录时间：2017-09-04 15:47:23,074 
+线程ID: [10] 
+级别：INFO  
+记录器：DesignContest.WinApp.App 
+所在方法：OnStartup 
+描述：日志配置成功。
+
+
+记录时间：2017-09-04 15:49:30,148 
+线程ID: [9] 
+级别：INFO  
+记录器：DesignContest.WinApp.App 
+所在方法：OnStartup 
+描述：日志配置成功。
+

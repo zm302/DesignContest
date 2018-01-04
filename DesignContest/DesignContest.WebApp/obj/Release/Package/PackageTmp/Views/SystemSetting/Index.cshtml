@@ -1,0 +1,172 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+@section head{
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1">
+<!-- Set render engine for 360 browser -->
+<meta name="renderer" content="webkit">
+
+<!-- No Baidu Siteapp-->
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+<!-- Add to homescreen for Chrome on Android -->
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" sizes="192x192" href="~/assets/i/app-icon72x72@2x.png">
+
+<!-- Add to homescreen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+<link rel="apple-touch-icon-precomposed" href="~/assets/i/app-icon72x72@2x.png">
+
+<!-- Tile icon for Win8 (144x144 + tile color) -->
+<meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+<meta name="msapplication-TileColor" content="#0e90d2">
+
+<link rel="stylesheet" href="~/Content/amazeui.min.css">
+<link rel="stylesheet" type="~/text/css" href="Content/bootstrap.min.css">
+<link type="text/css" href="~/Content/Settingcss.css" rel="stylesheet">
+
+<script src="~/Scripts/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="~/Scripts/amazeui.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.hoverex.js"></script>
+    }
+@section header_title{
+    <span style="float:left;margin-left:20%;line-height:50px;font-size:1.2em;">系统配置</span>
+}
+<div>
+    <div data-am-widget="tabs" class="am-tabs am-tabs-d2" data-am-tabs-noswipe="1" style="width:850px;float:left;margin-left:120px;">
+        <ul class="am-tabs-nav am-cf">
+            <li class="am-active"><a href="productdetails.html#[data-tab-panel-0] " style="text-decoration: none;background-color:#ffffff;">系统设置</a></li>
+            <li class=""><a href="productdetails.html#[data-tab-panel-1]" style="text-decoration: none;background-color:#ffffff;">网络设置</a></li>
+        </ul>
+        <div class="am-tabs-bd" style="border-bottom-style: none;border-right-style: none;border-left-style: none;">
+            <div data-tab-panel-0 class="am-tab-panel am-active">
+                <div id="first">
+                    <div style="width:100%;height:3px;background-color:#dddddd;"></div>
+                    <table style="float:left;">
+                        <tr>
+                            <th>ADAM串口</th>
+                            <td>
+                                <select data-am-selected>
+                                    <option value="a">One</option>
+                                    <option value="b" selected>select</option>
+                                    <option value="o">Three</option>
+                                    <option value="m">Four</option>
+                                    <option value="d" disabled>禁用</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select data-am-selected>
+                                    <option value="a">One</option>
+                                    <option value="b" selected>select</option>
+                                    <option value="o">Three</option>
+                                    <option value="m">Four</option>
+                                    <option value="d" disabled>禁用</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>四模拟量串口</th>
+                            <td>
+                                <select data-am-selected>
+                                    <option value="a">One</option>
+                                    <option value="b" selected>select</option>
+                                    <option value="o">Three</option>
+                                    <option value="m">Four</option>
+                                    <option value="d" disabled>禁用</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select data-am-selected>
+                                    <option value="a">One</option>
+                                    <option value="b" selected>select</option>
+                                    <option value="o">Three</option>
+                                    <option value="m">Four</option>
+                                    <option value="d" disabled>禁用</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>ZigBee协调器</th>
+                            <td>
+                                <select data-am-selected>
+                                    <option value="a">One</option>
+                                    <option value="b" selected>select</option>
+                                    <option value="o">Three</option>
+                                    <option value="m">Four</option>
+                                    <option value="d" disabled>禁用</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select data-am-selected>
+                                    <option value="a">One</option>
+                                    <option value="b" selected>select</option>
+                                    <option value="o">Three</option>
+                                    <option value="m">Four</option>
+                                    <option value="d" disabled>禁用</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>RFID桌面发卡器</th>
+                            <td>
+                                <select data-am-selected>
+                                    <option value="a">One</option>
+                                    <option value="b" selected>select</option>
+                                    <option value="o">Three</option>
+                                    <option value="m">Four</option>
+                                    <option value="d" disabled>禁用</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select data-am-selected>
+                                    <option value="a">One</option>
+                                    <option value="b" selected>select</option>
+                                    <option value="o">Three</option>
+                                    <option value="m">Four</option>
+                                    <option value="d" disabled>禁用</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div data-tab-panel-1 class="am-tab-panel ">
+                <div id="second">
+                    <div style="width:100%;height:3px;background-color:#dddddd;"></div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="am-tabs-bd">
+            <button type="button" class="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off" style="margin-top: 40px;width: 150px;height: 30px;margin-left:180px;">
+                保存
+            </button>
+            <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off" style="margin-top: 40px;width: 150px;height: 30px;margin-left:180px;">
+                取消
+            </button>
+        </div>
+    </div>
+</div>
+

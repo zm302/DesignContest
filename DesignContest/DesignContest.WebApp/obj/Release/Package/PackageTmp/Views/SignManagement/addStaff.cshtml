@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "addStaff";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+@using DesignContest.Entity.Models
+@using DesignContest.Common
+@{ string[] info = new string[6];}
+@section head {
+<meta name="viewport" content="width=device-width" />
+<title>添加员工</title>
+<link href="~/Content/tableStyle.css" rel="stylesheet" />
+<script src="/KinderEditor/kindeditor-min.js"></script>
+<link rel="stylesheet" href="/KinderEditor/themes/default/default.css" />
+<link rel="stylesheet" href="/KinderEditor/plugins/code/prettify.css" />
+<script charset="utf-8" src="/KinderEditor/kindeditor.js"></script>
+<script charset="utf-8" src="/KinderEditor/lang/zh_CN.js"></script>
+<script charset="utf-8" src="/KinderEditor/plugins/code/prettify.js"></script>
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery.easyui.min.js"></script>
+<script src="~/Scripts/easyui-lang-zh_CN.js"></script>
+<script src="~/Scripts/MyAjaxForm.js"></script>
+<script type="text/javascript">
+        KindEditor.ready(function (K) {
+            var editor1 = K.create('#MsgContent', {
+                cssPath: '/KinderEditor/plugins/code/prettify.css',
+                uploadJson: '/KinderEditor/asp.net/upload_json.ashx',
+                fileManagerJson: '/KinderEditor/asp.net/file_manager_json.ashx',
+                allowFileManager: true,
+                afterBlur: function () { this.sync(); },//注意这里（异步提交时需要同步）
+                afterCreate: function () {
+                    var self = this;
+                    self.sync();//把富文本编辑器的内容放到  文本域里面去。
+
+                }
+            });
+            prettyPrint();//注意要调用该方法.
+        });
+        $("#Add").click(function () {alert("请输入员工编号！");
+            
+
+});
+
+            //提交表单
+            function subForm() {
+            $("#form1").submit();
+            }
+            function afterAdd() {
+                window.parent.afterAdd();
+            }
+
+</script>
+}
+@section header_title{
+    <span style="float:left;margin-left:20%;line-height:50px;font-size:1.2em;">添加用户</span>
+}
+
+<body>
+    <div style="margin-top:20px;">
+        <form>
+            @using (Ajax.BeginForm("AddNewInfo", "AdminNewList", new AjaxOptions() { HttpMethod = "post", OnSuccess = "afterAdd" }, new { id = "form1" }))
+            {
+                <table>
+                    <tr><td>员工编号</td><td><input type="text" name="staffID" /></td></tr>
+                    <tr><td>员工姓名</td><td><input type="text" name="staffName" /></td></tr>
+                    <tr>
+                        <td>性别</td>
+                        <td>
+                            <label style="margin-right:20px;"><input name="sex" type="radio" value="男" checked="checked" />男 </label>
+                            <label><input name="sex" type="radio" value="女" />女 </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>年龄</td>
+                        <td>
+                            <input type="text" name="staffAge" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>联系电话</td>
+                        <td>
+                            <input type="text" name="phone" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>居住地址</td>
+                        <td>
+                            <input type="text" name="address" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="submit" id="Add" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off" style="margin-top: 50px;width: 150px;height: 30px;">
+                                录入
+                            </button>
+                            <button type="reset" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off" style="margin-top: 50px;width: 150px;height: 30px;">
+                                取消
+                            </button>
+                        </td>
+
+                    </tr>
+                </table>
+            }
+        </form>
+    </div>
+</body>
+

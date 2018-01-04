@@ -1,0 +1,188 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+@using DesignContest.Entity.Models
+@using DesignContest.Common
+@section head {
+    <link rel="stylesheet" href="Content/amazeui.min.css">
+<link rel="stylesheet" href="~/Content/css.css">
+<link rel="stylesheet" href="~/Content/app.css">
+<link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css">
+<link type="text/css" href="~/Content/signincss.css" rel="stylesheet">
+<script src="~/Scripts/jquery.js"></script>
+<script src="~/Scripts/mediaelement-and-player.min.js"></script>
+<link rel="stylesheet" href="~/Scripts/mediaelementplayer.css" />
+<script src="~/Scripts/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="~/Scripts/amazeui.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#divAdd").css("display", "none");
+        $("#myButton").click(function () {
+            //location.href = 'addStaff';
+            addInfo();
+        });
+        function addInfo() {
+            $("#AddFrame").attr("src", "/SignManagement/addStaff");
+            $("#divAdd").css("display", "block");
+            $('#divAdd').dialog({
+                modal: true,
+                resizable: true,
+                maximizable: true,
+                collapsible: true,
+                title: "添加员工",
+                width: 700,
+                height: 400,
+                buttons: [{
+                    text: '确定',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        //调用子窗体中的方法.
+                        var childWindow = $("#AddFrame")[0].contentWindow;//获取子窗体的window对象
+                        childWindow.subForm();
+                    }
+                }, {
+                    text: '取消',
+                    handler: function () {
+                        $('#divAdd').dialog('close');
+                    }
+                }]
+            });
+        }
+        function afterAdd() {
+            $('#divAdd').dialog('close');
+        }
+    });
+</script>
+}
+@section header_title{
+    <span style="float:left;margin-left:20%;line-height:50px;font-size:1.2em;">签到考勤</span>
+}
+<div id="left">
+    <ul>
+        <li>
+            <div class="content1">
+                <p>卫生人员签到历史</p>
+                <table class="tablestyle">
+                    <tr>
+                        <th>员工编号</th>
+                        <th>员工姓名</th>
+                        <th>签到时间</th>
+                        <th>实验室名称</th>
+                    </tr>
+                    <tr>
+                        <td>1001</td>
+                        <td>张小明</td>
+                        <td>2017-3-31</td>
+                        <td>流韵楼501</td>
+                    </tr>
+                    <tr>
+                        <td>1001</td>
+                        <td>马小明</td>
+                        <td>2017-3-31</td>
+                        <td>流韵楼501</td>
+                    </tr>
+                    <tr>
+                        <td>1001</td>
+                        <td>李小明</td>
+                        <td>2017-3-31</td>
+                        <td>流韵楼501</td>
+                    </tr>
+                    <tr>
+                        <td>1001</td>
+                        <td>王小明</td>
+                        <td>2017-3-31</td>
+                        <td>流韵楼501</td>
+                    </tr>
+
+                </table>
+            </div>
+        </li>
+        <li>
+            <div class="content2">
+                <div id="shupai">
+                    <ul style="text-align:center;">
+                        <li>卫</li>
+                        <li>生</li>
+                        <li>考</li>
+                        <li>勤</li>
+                        <li>签</li>
+                        <li>到</li>
+                    </ul>
+                </div>
+                <table id="tablestyle1">
+                    <tr>
+                        <th>员工编号</th>
+                        <td>1001</td>
+                    </tr>
+                    <tr>
+                        <th>员工姓名</th>
+                        <td>李小明</td>
+                    </tr>
+                    <tr>
+                        <th>性别</th>
+                        <td>男</td>
+                    </tr>
+                    <tr>
+                        <th>年龄</th>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <th>联系电话</th>
+                        <td>8208208820</td>
+                    </tr>
+                    <tr>
+                        <th>入职时间</th>
+                        <td>2016-01-01</td>
+                    </tr>
+                    <tr>
+                        <th>家庭地址</th>
+                        <td>苏州职业大学</td>
+                    </tr>
+                </table>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="content1" style="border: 3px dashed #663399;height:690px;">
+    <p style="background:#888888;">卫生管理人员信息</p>
+    <table class="tablestyle">
+        <tr>
+            <th>员工姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <th>联系电话</th>
+        </tr>
+        @if (ViewData["staffInfo"] != null)
+        {
+            foreach (string[] info in ViewData["staffInfo"] as List<string[]>)
+            {
+                <tr>
+                    <td>@info[0]</td>
+                    <td>@info[1]</td>
+                    <td>@info[2]</td>
+                    <td>@info[3]</td>
+                </tr>
+            }
+        }
+
+    </table>
+    <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off" style="margin-top: 100px;width: 150px;height: 30px;">
+        添加卫生人员信息
+    </button>
+</div>
+<div id="divAdd" style="overflow:hidden">
+    <iframe id="AddFrame" frameborder="0" width="100%" height="100%" scrolling="auto"></iframe>
+</div>
+

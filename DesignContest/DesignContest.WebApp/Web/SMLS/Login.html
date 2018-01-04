@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="SHORTCUT ICON" href="favicon.ico">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/supersized.3.2.7.min.js"></script>
+    <script src="js/Login.js"></script>
+    <script src="js/html5shiv.js"></script>
+
+    <link href="css/Login.css" rel="stylesheet" />
+    <link href="css/supersized.css" rel="stylesheet" />
+    <title>智慧实验室管理系统</title>
+</head>
+<body>
+    <div class="page-container">
+        <h1>欢迎使用智慧实验室管理系统</h1>
+        <form id="login">
+            <input type="text" class="username" placeholder="请输入用户名" />
+            <span class="error1"></span>
+            <input type="password" class="password" placeholder="请输入密码" />
+            <span class="error2"></span>
+            <button id="submit" onclick="return FormSubmitHandler()">登陆</button>
+            <div class="connect"><a href="##">忘记密码</a></div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+@using DesignContest.Entity.Models
+@using DesignContest.Common
+@section head {
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js">
+		$(".dropdown-toggle").dropdown({
+		toggle:true
+	});
+	function dropdown(){
+		$(".dropdown-toggle").dropdown("toggle");
+	}
+</script>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.hoverex.js"></script>
+}
+@section header_title{
+    <span style="float:left;margin-left:20%;line-height:50px;font-size:1.2em;">实验室管理</span>
+}
+<div id="content1">
+    <form method="post">
+        @if (ViewData["classroomInfo"] != null)
+        {
+            <ul>
+                @foreach (string[] classroom in (List<string[]>)ViewData["classroomInfo"])
+                {
+                    <li class="li2">
+                        <div class="demowrap cf">
+                            <div class="box">
+                                <div class="he-wrap tpl4">
+                                    <img src="~/Content/Images/8.jpeg" alt="" />
+                                    <div class="he-view">
+                                        <div class="bg">
+                                            <div class="a0" data-animate="fadeInDown"></div>
+                                            <div class="a0" data-animate="fadeInUp"></div>
+                                            <div class="a0" data-animate="fadeInDown"></div>
+                                            <div class="a0" data-animate="fadeInUp"></div>
+                                            <div class="a0" data-animate="fadeInDown"></div>
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="info-title a2" data-animate="fadeInDown">@classroom[0]</h3>
+                                            <div class="detail a2" data-animate="fadeInUp">
+                                                <ul>
+                                                    <li>实验室名称:@classroom[0]</li>
+                                                    <li>实验室类别:@classroom[1]</li>
+                                                    <li>实验室功能:@classroom[2]</li>
+                                                    <li>实验室地址:@classroom[3]</li>
+                                                    <li>实验室描述:@classroom[4]</li>
+                                                    <li>实验室注意事项:@classroom[5]</li>
+                                                    <li>其他注意事项:@classroom[6]</li>
+                                                </ul>
+                                            </div>
+
+                                            <a href="../LaboraEnvironment/Index/?classroomID=@classroom[9]" class="more a2" data-animate="fadeInRight">查看更多</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        }
+    </form>
+</div>
+

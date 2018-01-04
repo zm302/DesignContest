@@ -1,0 +1,12 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/DesignContest/DesignContest.BLL/bin
+/DesignContest/DesignContest.BLL/obj
+/DesignContest/DesignContest.Common/bin
+/DesignContest/DesignContest.Common/obj
+/DesignContest/DesignContest.DAL/bin
+/DesignContest/DesignContest.DAL/obj
+/DesignContest/DesignContest.Entity/bin
+/DesignContest/DesignContest.Entity/obj

@@ -1,0 +1,132 @@
+﻿<Window x:Class="DesignContest.WinApp.CorridorLampManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesignContest.WinApp"
+        xmlns:wfi ="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        xmlns:wf ="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        mc:Ignorable="d"
+        Title="CorridorLampManager" Height="800" Width="1500" WindowStartupLocation="CenterScreen" WindowStyle="None" WindowState="Maximized" Icon="Resources/SLMS.png" Loaded="Window_Loaded">
+    <Grid>
+        <Grid Margin="10,0,-10.4,-0.4">
+            <Grid.Background>
+                <ImageBrush ImageSource="Resources/light2.jpg"/>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="98*"/>
+                <RowDefinition Height="622*"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.Background>
+                    <ImageBrush ImageSource="Resources/corridorLamptitle.png"/>
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="27*"/>
+                    <RowDefinition Height="71*"/>
+                </Grid.RowDefinitions>
+                <Image Name="imgBack" Source="Resources/back.png" Width="32" HorizontalAlignment="Right" Margin="20,0" MouseLeftButtonDown="imgBack_MouseLeftButtonDown"/>
+            </Grid>
+            <Grid Grid.Row="1" Margin="0,20" Height="550" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="1500"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.Background>
+                    <ImageBrush ImageSource="Resources/bg_frame_gray.png"/>
+                </Grid.Background>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="180"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1000"/>
+                        <ColumnDefinition Width="460"/>
+                    </Grid.ColumnDefinitions>
+                    <Canvas Grid.Column="0" Grid.RowSpan="3">
+                        <Canvas.Background>
+                            <ImageBrush ImageSource="Resources/corridorLampbg.png"/>
+                        </Canvas.Background>
+                        <Image Source="Resources/lamp_off.png" Width="42" Canvas.Left="295" Canvas.Top="245" Height="64"/>
+                        <Image Source="Resources/lamp_off.png" Width="90" Canvas.Left="726" Canvas.Top="416" Height="49"/>
+                        <Image Source="Resources/lamp_off.png" Width="87" Canvas.Left="750" Canvas.Top="187" Height="50"/>
+                        <Image Source="Resources/lamp_off.png" Width="82" Canvas.Left="417" Canvas.Top="389" Height="46"/>
+                        <Image Source="Resources/lamp_off.png" Width="38" Canvas.Left="539" Height="80" Canvas.Top="39"/>
+                        <Image Source="Resources/lamp_off.png" Width="46" Canvas.Left="128" Canvas.Top="147" Height="69"/>
+                    </Canvas>
+                    <StackPanel Grid.Row="0" Grid.Column="1">
+                        <RadioButton Name="radioBtnManual" IsChecked="True" FontSize="20" GroupName="groupCtrl" Click="RadioButton_Click">手动控制</RadioButton>
+                        <GroupBox Name="boxManual" FontSize="20">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Canvas Grid.Column="0" Height="140">
+                                    <Image Source="Resources/lampswitchbasis.png"  Width="150"/>
+                                    <Image Source="Resources/btneast.png" Height="140" Width="65" Canvas.Top="10" Canvas.Left="5" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+                                    <Image Source="Resources/btnsouth.png" Height="140" Width="65" Canvas.Top="10" Canvas.Left="70" MouseLeftButtonDown="Image_MouseLeftButtonDown_1"/>
+                                </Canvas>
+                                <Canvas Grid.Column="1" Height="140">
+                                    <Image Source="Resources/lampswitchbasis.png" Width="150"/>
+                                    <Image Source="Resources/btnwest.png" Height="140" Width="65" Canvas.Top="10" Canvas.Left="5" MouseLeftButtonDown="Image_MouseLeftButtonDown_2"/>
+                                    <Image Source="Resources/btnnorth.png" Height="140" Width="65" Canvas.Top="10" Canvas.Left="70" MouseLeftButtonDown="Image_MouseLeftButtonDown_3"/>
+                                </Canvas>
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="1">
+                        <RadioButton Name="radioBtnBody" FontSize="20" GroupName="groupCtrl" Click="RadioButton_Click">人体感应控制</RadioButton>
+                        <GroupBox Name="boxBody" FontSize="20" IsEnabled="False">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Margin="10,20">有无人进入楼道:</TextBlock>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Margin="10,20">无</TextBlock>
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Grid.Column="1">
+                        <RadioButton Name="radioBtnTime" FontSize="20" GroupName="groupCtrl" Click="RadioButton_Click">时段控制</RadioButton>
+                        <GroupBox Name="boxTime" FontSize="20" IsEnabled="False">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Margin="10">开灯时间:</TextBlock>
+                                <wfi:WindowsFormsHost Grid.Row="0" Grid.Column="1"  Width="200"  >
+                                    <wf:DateTimePicker x:Name="tpStartDate" Format="Time" ShowUpDown="True" />
+                                </wfi:WindowsFormsHost>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Margin="10">熄灯时间:</TextBlock>
+                                <wfi:WindowsFormsHost Grid.Row="1" Grid.Column="1" Width="200" Height="46" Margin="72,0" VerticalAlignment="Bottom">
+                                    <wf:DateTimePicker x:Name="tpEndTime" Format="Time" ShowUpDown="True" />
+                                </wfi:WindowsFormsHost>
+                                <Button Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Background="#bababa">确定</Button>
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Button Name="btnQuit" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" FontSize="20" Margin="20,0" Click="btnQuit_Click">退出</Button>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>

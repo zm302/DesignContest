@@ -1,0 +1,84 @@
+*{
+	margin:0 auto;
+	padding:0 ;
+}
+body{
+
+}
+#top{
+	background-color:#99ccFF;
+	z-index: 900;
+	position: relative;
+	border-bottom: 1px solid #ddd;
+	height: 27px;
+}
+#top a{
+	line-height: 27px;
+}
+.niconiconi{
+	background-color: #99ccff;
+	float: left;
+	width: 200px;
+	height: 50px;
+	text-align: center;
+}
+.niconiconi a{
+	text-align: center;	
+	color: #ffffff;
+	font-weight:500;
+	line-height: 50px;
+	font-size: 20px;
+	float: left;
+	text-decoration: none;
+
+}
+.nico{
+	margin-left: 5px;	
+	text-decoration: none;
+}
+.nico:hover
+{
+	text-decoration: none;
+}
+.nico:link
+{
+	text-decoration: none;
+}
+#thenav
+{
+	font-size: 1.1em;
+	font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+#login
+{
+	font-size: 1.1em;
+	font-family: '微软雅黑', Arial, sans-serif;
+	margin-right:45px;
+	line-height:50px;
+}
+
+#img
+{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+
+#content1
+{
+	width: 100%;
+	height: 350px;
+}
+.li2
+{
+	float: left;
+	list-style: none;
+	margin-left:20px;
+	width: 362px;
+	height: 310px;
+}
+#content1 img
+{
+	width: 320px;
+	height: 267px;
+}

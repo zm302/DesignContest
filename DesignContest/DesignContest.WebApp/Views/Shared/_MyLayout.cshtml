@@ -1,0 +1,158 @@
+﻿
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        a, img {
+            border: 0;
+        }
+
+        body {
+            font: 12px/180% Arial, Helvetica, sans-serif, "新宋体";
+        }
+
+        .cf:before, .cf:after {
+            content: " ";
+            display: table;
+        }
+
+        .cf:after {
+            clear: both;
+        }
+
+        .cf {
+            *zoom: 1;
+        }
+
+        .page {
+            width: 1100px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .box {
+            float: left;
+            padding: 1px;
+            box-shadow: 0 0 2px rgba(0,0,0,.1);
+            margin: 20px 40px 20px 0;
+        }
+
+        .title {
+            border-bottom: 3px solid #ddd;
+            line-height: 2em;
+            clear: both;
+        }
+
+            .title h3 {
+                float: left;
+                margin-bottom: -3px;
+                border-bottom: 3px solid #c00;
+                color: #c00;
+                padding: 0 5px;
+            }
+    </style>
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/css.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/hoverex-all.css" />
+    <link rel="stylesheet" href="~/Content/templates.css" />
+    @RenderSection("head", false)
+    
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-default" style="border:none;">
+            <div class="niconiconi"> <a href="#" class="nico"> <span class="nico">智能实验室管理系统</span> </a> </div>
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="background-color: #99ccFF;">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size:1.1em;margin-left:20px;">实验室 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li role="separator" class="divider"></li>
+                                <li><a href="../LaboraEnvironment/Index">流韵楼501</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="../LaboraEnvironment/Index">流韵楼409</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="../LaboraEnvironment/Index">流韵楼410</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="../LaboraEnvironment/Index">流韵楼412</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="../LaboraEnvironment/Index">流韵楼423</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="../LaboraEnvironment/Index">流韵楼425</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    @RenderSection("header_title", false)
+                 
+                    <div class="navbar-form navbar-left" style="margin-left: 20%; float: right;">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="实验室查询">
+                            <a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                        </div>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right" id="login">
+                        <li class="dropdown">
+                            <a href="#" style="float:right;"> <img src="~/Content/Images/6.jpg" id="img" /> </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <nav ui-nav="" class="navi ng-scope" ng-include="'tpl/blocks/nav.html'" style="display: block;background-color: #454545;width: 200px;float: left;margin-top: -20px;height: 715px;">
+            <!-- list -->
+            <ul class="nav ng-scope" id="thenav">
+                <li class="hidden-folded padder m-t m-b-sm text-muted text-xs" style="margin-bottom: 15px;">
+                </li>
+                <li class="">
+                    <span class="pull-right text-muted">
+                        <i class="fa fa-fw fa-angle-right text"></i>
+                        <i class="fa fa-fw fa-angle-down text-active"></i>
+                    </span>
+                    <a href="~/LaboraManagement/Index" style="color:#aaaaaa;">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true" style="padding-right: 3px;margin-top: 5px;line-height: 45px;color:#aaaaaa;"></span>实验室管理
+                    </a>
+                    <a href="~/CorridorLight/Index" style="color:#aaaaaa;">
+                        <span class="glyphicon glyphicon-glass" aria-hidden="true" style="padding-right: 3px;margin-top: 5px;line-height: 45px;color:#aaaaaa;"></span>楼道灯控制
+                    </a>
+                    <a href="~/SignManagement/Index" style="color:#aaaaaa;">
+                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="padding-right: 3px;margin-top: 5px;line-height: 45px;color:#aaaaaa;"></span>签到考勤
+                    </a>
+                    <a href="~/LaboraMasterCtrl/Index" style="color:#aaaaaa;">
+                        <span class="glyphicon glyphicon-wrench" aria-hidden="true" style="padding-right: 3px;margin-top: 5px;line-height: 45px;color:#aaaaaa;"></span>总控制台
+                    </a>
+                    <a href="../SystemSetting/Index" style="color:#aaaaaa;">
+                        <span class="glyphicon glyphicon-tags" aria-hidden="true" style="padding-right: 3px;margin-top: 5px;line-height: 45px;color:#aaaaaa;"></span>系统配置
+                    </a>
+                </li>
+            </ul>
+            <!-- / list -->
+        </nav>
+
+        @RenderBody()
+    </div>
+</body>
+</html>
+

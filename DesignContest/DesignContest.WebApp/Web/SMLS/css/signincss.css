@@ -1,0 +1,120 @@
+*{
+    margin: 0 auto;
+    padding:0;
+}
+body{}
+#content1
+{
+    float: left;
+    border: 3px dashed #888888;
+    margin-left: 30px;
+    width: 500px;
+    height: 364px;
+    text-align: center;
+}
+#tablestyle{
+    margin-top: 20px;
+    border-collapse: collapse; 
+    width: 320px;
+   
+}
+#tablestyle table{
+    border: 0px solid #999; 
+    border-collapse: collapse; 
+}
+#tablestyle td{
+    border-top: 1px solid #999; 
+
+border-bottom: 1px solid #999; 
+border-left: 1px solid #999; 
+border-right:1px solid #999;
+}
+#tablestyle th{
+    border-bottom: 1px solid #999; 
+    border-top: 1px solid #999; 
+    border-right:1px solid #999;
+    border-left:1px solid #999;
+}
+#tablestyle tr
+{
+    height: 50px;
+}
+#content1 p
+{
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 5px;
+    background:#667799;
+    width: 200px;
+    height: 50px;
+    -moz-border-radius: 4px 4px 4px 4px;
+   	-webkit-border-radius: 4px 4px 4px 4px;
+   	border-radius:4px 4px 4px 4px;
+    line-height: 50px;
+    margin-left: 150px;
+}
+#content2
+{
+    float:left;
+    border: 3px dashed #888888;
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 500px;
+    height: 305px;
+    text-align: center;
+}
+#left
+{   
+    float: left;
+    width: 560px;
+    height: 690px;
+}
+#left li
+{
+    list-style: none;
+}
+#tablestyle1{
+    margin-top: 20px;
+    border-collapse: collapse; 
+    width: 300px;
+    height: 250px;
+}
+#tablestyle1 table{
+    border: 0px solid #999; 
+    border-collapse: collapse; 
+}
+#tablestyle1 td{
+    border-top: 1px solid #999; 
+
+border-bottom: 1px solid #999; 
+border-left: 1px solid #999; 
+}
+#tablestyle1 th{
+    border-bottom: 1px solid #999; 
+        border-top: 1px solid #999; 
+}
+#shupai
+{
+    width: 50px;
+    height: 150px;
+    background: #09924b;
+    color: #fff;
+    float: left;
+    font-size: 1.2em;
+    text-align: center;
+    -moz-border-radius: 4px 4px 4px 4px;
+   	-webkit-border-radius: 4px 4px 4px 4px;
+   	border-radius:4px 4px 4px 4px;
+    margin-top: 75px;
+}
+#shupai li
+{
+    list-style: none;
+
+}
+#shupai ul
+{
+    width: 15px;
+    float: left;
+    margin-left: -17px;
+}
